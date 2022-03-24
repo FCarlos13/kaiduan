@@ -6,27 +6,37 @@ public class GameSystemInterfaces : MonoBehaviour
 {
     #region 数据
     public GameObject gameSystem;
+    private GameSystem obj;
     #endregion
 
     #region 接口函数
     //当触发某些条件可额外增加使用E的次数
     public void PlusExtraChances(int i)
     {
-        gameSystem.ExtraChancesAttribute = i;
+        obj.ExtraChancesAttribute += i;
     }
 
     public int GetChancesNum()
     {
-        return gameSystem.ChancesLeftToPushEAttribute;
+        return obj.ChancesLeftToPushEAttribute;
     }
 
     public void GameOver()
     {
-        gameSystem.GameOver();
+        Debug.Log("interfaces gameover");
+        obj.GameOver();
     }
     #endregion
 
     #region 回调
+    private void Awake()
+    {
+        //if (GameSystem.Instance == null)
+        //{
+        //    GameObject.Instantiate(gameSystem);
+        //}
+        obj = gameSystem.GetComponent<GameSystem>();
+    }
     
     #endregion
 }

@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameSystem : MonoBehaviour
 {
     #region 数据=============================
-    const int MAXCHANCES = 10;
+    const int MAXCHANCES = 15;
+    public static GameSystem Instance { get; set; }
 
-    //用来保存重置游戏时不被摧毁的对象，
-    //不被摧毁的对象都挂在一个空物体上。
-    public GameObject systemControl;
-
-    private int chancesLeftToPushE;
+    private int chancesLeftToPushE = 5;
     private int extraChances;
 
     public int ExtraChancesAttribute
@@ -41,23 +38,23 @@ public class GameSystem : MonoBehaviour
     #region 方法=============================
     //系统启动加载，重载，游戏结束
 
-    void InitGame()
+    void InitGame(int timeToPushE)
     {
         isGameOver = false;
-        chancesLeftToPushE = 5;
+        chancesLeftToPushE = timeToPushE;
         extraChances = 0;
-        GameObject.DontDestroyOnLoad(systemControl);
+        GameObject.DontDestroyOnLoad(this.gameObject);
     }
-    void ReloadGame(int timeToPushE)
-    {
-        this.chancesLeftToPushE = timeToPushE;
-    }
+    //void ReloadGame(int timeToPushE)
+    //{
+    //    this.chancesLeftToPushE = timeToPushE;
+    //}
 
     public void GameOver()//TODO
     {
 
         //1. 播放动画
-        //startOver = true;
+        Debug.Log("real game over");
         isGameOver = true;
     }
 
@@ -71,7 +68,7 @@ public class GameSystem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                ReloadGame(chancesLeftToPushE + extraChances);
+                extraChances += 2;
                 SceneManager.LoadScene(0);
             }
         }
@@ -80,12 +77,23 @@ public class GameSystem : MonoBehaviour
     #endregion
 
     #region 回调=============================
-
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        InitGame(chancesLeftToPushE + extraChances);
+    }
     private void Start()
     {
         Debug.Log("first load scene");
-        systemControl = GameObject.Find("SystemControl");
-        InitGame();
+        //systemControl = GameObject.Find("SystemControl");
     }
     private void Update()
     {
