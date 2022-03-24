@@ -21,6 +21,6 @@ public class UI_Chat : UIBase
         bt1 = transform.Find("Choice1").gameObject.GetComponent<Button>();
         bt2 = transform.Find("Choice2").gameObject.GetComponent<Button>();
         bt3 = transform.Find("Choice3").gameObject.GetComponent<Button>();
-        HideWithCanvasGroup();
+        //HideWithCanvasGroup();
     }
 }

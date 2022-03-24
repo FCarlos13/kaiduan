@@ -9,10 +9,10 @@ public class UI_Chances : UIBase
 
     public void ChangeNum(int i)
     {
-        if(int.Parse(obj.text) != i)
-        {
-            obj.text = i.ToString();
-        }
+        //if(int.Parse(obj.text) != i)
+        //{
+        //    obj.text = i.ToString();
+        //}
     }
     private void Start()
     {

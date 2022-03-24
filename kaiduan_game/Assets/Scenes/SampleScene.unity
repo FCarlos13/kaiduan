@@ -747,6 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 388720188}
   cam: {fileID: 963194228}
+  CommunicateTrigger: 0
   speed: 4
   gravity: 20
   JumpSpeed: 8
@@ -1248,7 +1249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547605379}
-  m_LocalRotation: {x: 0.2320094, y: 0.0022840647, z: -0.0005447914, w: 0.9727107}
+  m_LocalRotation: {x: 0.2320094, y: 0.0022884875, z: -0.00054584636, w: 0.9727107}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2435,8 +2436,9 @@ GameObject:
   - component: {fileID: 925603087}
   - component: {fileID: 925603086}
   - component: {fileID: 925603089}
+  - component: {fileID: 925603090}
   m_Layer: 3
-  m_Name: Capsule (1)
+  m_Name: NPC2
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,6 +2535,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.62, y: 2, z: 3.65}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &925603090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925603084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c58d02efc1160f47a644477c7fae0c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moodLevel: 10
+  canCommunicate: 1
+  player: {fileID: 388720185}
+  pl: {fileID: 388720187}
+  communicateUI: {fileID: 1202989955}
+  refuseUI: {fileID: 701820021}
+  giveKey: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.23149624, y: 0.0015986513, z: -0.00038220198, w: 0.97283447}
+  m_LocalRotation: {x: 0.23149623, y: 0.0016017468, z: -0.000382942, w: 0.9728344}
   m_LocalPosition: {x: 14.87, y: 9.219843, z: 35.50239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3165,7 +3186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1202989956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3268,8 +3289,9 @@ GameObject:
   - component: {fileID: 1229342242}
   - component: {fileID: 1229342241}
   - component: {fileID: 1229342244}
+  - component: {fileID: 1229342245}
   m_Layer: 3
-  m_Name: Capsule
+  m_Name: NPC1
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3366,6 +3388,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1229342245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229342239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd284e29b118c394594c20c093430b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moodLevel: 10
+  canCommunicate: 1
+  player: {fileID: 388720185}
+  pl: {fileID: 0}
+  communicateUI: {fileID: 1202989955}
+  refuseUI: {fileID: 701820021}
+  giveKey: 0
 --- !u!1 &1338375966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,8 +4395,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727571863}
   m_LocalRotation: {x: -0, y: -0.1914573, z: -0, w: 0.981501}
-  m_LocalPosition: {x: 14.16, y: 4.35, z: 25.44}
-  m_LocalScale: {x: 1.8567, y: 1.8567, z: 1.8567}
+  m_LocalPosition: {x: 31.4, y: 5.77, z: 25.44}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1032439145}
   m_Father: {fileID: 1042060299}
@@ -4371,8 +4412,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 1
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1727571866
@@ -4437,8 +4478,9 @@ GameObject:
   - component: {fileID: 1728534721}
   - component: {fileID: 1728534720}
   - component: {fileID: 1728534723}
+  - component: {fileID: 1728534724}
   m_Layer: 3
-  m_Name: Capsule (2)
+  m_Name: NPC3
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4535,6 +4577,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.01, y: 2, z: 3.25}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1728534724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728534718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4352c31ba60920144a9ac4df2f879adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moodLevel: 10
+  canCommunicate: 1
+  player: {fileID: 0}
+  pl: {fileID: 0}
+  communicateUI: {fileID: 1202989955}
+  refuseUI: {fileID: 701820021}
+  giveKey: 0
 --- !u!1001 &1814027171
 PrefabInstance:
   m_ObjectHideFlags: 0

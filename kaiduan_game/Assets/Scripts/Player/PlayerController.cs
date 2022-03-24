@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     public Transform cam;
+    public bool CommunicateTrigger;
 
     #region 数据===================================
     public float speed = 4f;
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
     bool Jumping = false;
     #endregion=====================================
 
+    private void Start()
+    {
+        CommunicateTrigger = true;
+    }
     void Update()
     {
         //获取输入的水平垂直轴
