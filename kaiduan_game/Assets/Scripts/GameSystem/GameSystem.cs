@@ -27,6 +27,7 @@ public class GameSystem : MonoBehaviour
     public int ChancesLeftToPushEAttribute
     {
         get { return chancesLeftToPushE; }
+        set { chancesLeftToPushE = value; }
     }
 
     #endregion
@@ -60,7 +61,7 @@ public class GameSystem : MonoBehaviour
 
     void CheckIfGameOver()
     {
-        if (this.chancesLeftToPushE == 1)
+        if (this.chancesLeftToPushE == 0)
         {
             GameOver();
         }
