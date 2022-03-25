@@ -7,12 +7,7 @@ public class UI_Die : UIBase
     // Start is called before the first frame update
     void Start()
     {
-        
+        HideWithCanvasGroup();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

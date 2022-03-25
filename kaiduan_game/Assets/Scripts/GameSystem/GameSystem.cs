@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameSystem : MonoBehaviour
 {
+    #region 组件
+    UIManager uiManager;
+    #endregion
     #region 数据=============================
     const int MAXCHANCES = 15;
     public static GameSystem Instance { get; set; }
@@ -44,7 +47,7 @@ public class GameSystem : MonoBehaviour
         isGameOver = false;
         chancesLeftToPushE = timeToPushE;
         extraChances = 0;
-        GameObject.DontDestroyOnLoad(this.gameObject);
+        //uiManager = GameObject.Find("MainCanvas").GetComponent<UIManager>();
     }
     //void ReloadGame(int timeToPushE)
     //{
@@ -53,8 +56,8 @@ public class GameSystem : MonoBehaviour
 
     public void GameOver()//TODO
     {
-
         //1. 播放动画
+        uiManager.uiDie.ShowWithCanvasGroup();
         Debug.Log("real game over");
         isGameOver = true;
     }
@@ -71,6 +74,7 @@ public class GameSystem : MonoBehaviour
             {
                 extraChances += 2;
                 SceneManager.LoadScene(0);
+                InitGame(chancesLeftToPushE + extraChances);
             }
         }
     }
@@ -95,6 +99,7 @@ public class GameSystem : MonoBehaviour
     {
         Debug.Log("first load scene");
         //systemControl = GameObject.Find("SystemControl");
+        uiManager = GameObject.Find("MainCanvas").GetComponent<UIManager>();
     }
     private void Update()
     {

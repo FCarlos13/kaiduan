@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region 组件
     public CharacterController controller;
     public Transform cam;
-    public bool CommunicateTrigger;
+    #endregion
 
-    #region 数据===================================
+    #region 状态
+    public bool isGetItem1 = false;
+    public bool isGetItem2 = false;
+    public bool isGetItem3 = false;
+    public bool CommunicateTrigger;
+    #endregion
+
+    #region 数据
     public float speed = 4f;
     public float gravity = 20f;
     public float JumpSpeed = 8f;
@@ -18,8 +26,9 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     bool Jumping = false;
-    #endregion=====================================
+    #endregion
 
+    #region 回调
     private void Start()
     {
         CommunicateTrigger = true;
@@ -66,4 +75,5 @@ public class PlayerController : MonoBehaviour
         }
 //====================================
     }
+    #endregion
 }

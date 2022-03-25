@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
-    public void HideWithCanvasGroup()
+    public virtual void HideWithCanvasGroup()
     {
         GetComponent<CanvasGroup>().alpha = 0;
         GetComponent<CanvasGroup>().interactable = false;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
-    public void ShowWithCanvasGroup()
+    public virtual void ShowWithCanvasGroup()
     {
         GetComponent<CanvasGroup>().alpha = 1;
         GetComponent<CanvasGroup>().interactable = true;

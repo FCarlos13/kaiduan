@@ -10,9 +10,4 @@ public class UI_Item : UIBase
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

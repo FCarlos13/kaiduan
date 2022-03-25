@@ -5,25 +5,22 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    /// <summary>
+    /// 提供一个对外的整体接口
+    /// </summary>
+
     #region 组件集合
     GameSystemInterfaces sysCtrl;
-    UI_Chances uiChances;
-    UI_Chat uiChat;
-    UI_Item uiItem;
-    UI_Die uiDie;
 
+    //提供给外部系统调用UI组件
+    public UI_Chances uiChances;
+    public UI_Chat uiChat;
+    public UI_Item uiItem;
+    public UI_Die uiDie;
     #endregion
 
-    #region 接口函数
+    #region 接口函数 //TODO
     //剩余机会=========================================================
-    public void ShowChances()
-    {
-        uiChances.ShowWithCanvasGroup();
-    }
-    public void HideChances()
-    {
-        uiChances.HideWithCanvasGroup();
-    }
     public void ChangeChances(int i)
     {
         uiChances.ChangeNum(i);

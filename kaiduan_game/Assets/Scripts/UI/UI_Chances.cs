@@ -9,12 +9,13 @@ public class UI_Chances : UIBase
 
     public void ChangeNum(int i)
     {
-        //if(int.Parse(obj.text) != i)
+        //if (int.Parse(obj.text) != i)
         //{
         //    obj.text = i.ToString();
         //}
+        obj.text = i.ToString();
     }
-    private void Start()
+    private void Awake()
     {
         obj = transform.Find("ChancesLeftNum").gameObject.GetComponent<Text>();
     }
