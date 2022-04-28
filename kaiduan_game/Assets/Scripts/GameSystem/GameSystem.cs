@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameSystem : MonoBehaviour
 {
     #region 组件
-    UIManager uiManager;
+    public UIManager uiManager;
     #endregion
     #region 数据=============================
     const int MAXCHANCES = 15;
@@ -37,6 +37,7 @@ public class GameSystem : MonoBehaviour
 
     #region 状态=============================
     bool isGameOver;
+    public bool isGameRunning;
     #endregion
 
     #region 方法=============================
@@ -56,9 +57,8 @@ public class GameSystem : MonoBehaviour
 
     public void GameOver()//TODO
     {
-        //1. 播放动画
+        //1. 播放动画TODO
         uiManager.uiDie.ShowWithCanvasGroup();
-        Debug.Log("real game over");
         isGameOver = true;
     }
 

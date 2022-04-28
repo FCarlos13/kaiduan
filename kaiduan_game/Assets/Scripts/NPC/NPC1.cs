@@ -4,48 +4,36 @@ using UnityEngine;
 
 public class NPC1 : NPCbase
 {//小女孩，特殊之处在于心情坏了之后就不想与你交流,高兴了就会给你道具1
-    private void OnTriggerEnter(Collider other)
-    {
-        uiManager.uiChat.bt1.onClick.AddListener(OnButton1Click);
-        uiManager.uiChat.bt2.onClick.AddListener(OnButton2Click);
-        uiManager.uiChat.bt3.onClick.AddListener(OnButton3Click);
-        //TODO显示按E
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            checkPlayerWantToCommunicate();
-            GSI.MinusChances();
-        }
-        
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        uiManager.uiChat.HideWithCanvasGroup();
-        //uiManager.uiChat.bt1.
-    }
+     
 
     #region 添加按键响应
-    void OnButton1Click()
+    public override void OnButton1Click()
     {
         base.moodLevelMinus();
+        if (moodLevel <= 0) badMood();
     }
-    void OnButton2Click()
+    public override void OnButton2Click()
     {
         base.moodLevelPlus();
+        if (moodLevel >= 20) goodMood();
     }
-    void OnButton3Click()
+    public override void OnButton3Click()
     {
-        uiManager.uiChat.ChangeChatText("好了好了");
+        uiManager.uiChat.HideWithCanvasGroup(); 
+        if (!GameObject.Find("CM FreeLook1"))
+        {
+            MainCamera.SetActive(true);
+        }
     }
     #endregion
 
     #region 函数
     public override void badMood()
     {
-        //Debug.Log("对方现在很生气");
+        //Debug.Log(GameObject.Find("MainCanvas"));
         canCommunicate = false;
+        uiManager.uiChat.ChangeChatText("你好烦啊，不想跟你说话了");
+        uiManager.uiChat.HideAllButtons();
     }
     public override void goodMood()
     {

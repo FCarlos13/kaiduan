@@ -58,20 +58,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\NPC\NPCbase.cs" />
     <Compile Include="Assets\Scripts\ZYS\zysScripts\Choseing.cs" />
-    <Compile Include="Assets\Scripts\ZYS\zysScripts\Items\MissionItem.cs" />
+    <Compile Include="Assets\Scripts\Items\MissionItem.cs" />
     <Compile Include="Assets\Scripts\ZYS\zysScripts\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\UI\NPCid.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Chances.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ZYS\zysScripts\Player\ThirdPersonController.cs" />
-    <Compile Include="Assets\Scripts\ZYS\zysScripts\Items\ItemController.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemController.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC1.cs" />
-    <Compile Include="Assets\Scripts\ZYS\zysScripts\Items\BagItem.cs" />
+    <Compile Include="Assets\Scripts\Items\BagItem.cs" />
     <Compile Include="Assets\Scripts\ZYS\zysScripts\Sword.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC2.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCcontroller.cs" />
-    <Compile Include="Assets\Scripts\ZYS\zysScripts\Items\ItemInfoBase.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemInfoBase.cs" />
     <Compile Include="Assets\Scripts\NPC\NPC3.cs" />
     <Compile Include="Assets\Scripts\GameSystem\GameSystem.cs" />
     <Compile Include="Assets\Import\Waldemarst\Broccoli\Controller\BroccoTreeController_1_2_5.cs" />
@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\UI\UI_Chat.cs" />
     <Compile Include="Assets\Scripts\GameSystem\GameSystemInterfaces.cs" />
     <Compile Include="Assets\Scripts\GlobalStatusDatabase.cs" />
-    <Compile Include="Assets\Scripts\ZYS\zysScripts\GameManager\Gamemanager.cs" />
+    <Compile Include="Assets\Scripts\GameSystem\Gamemanager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Item.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
   </ItemGroup>

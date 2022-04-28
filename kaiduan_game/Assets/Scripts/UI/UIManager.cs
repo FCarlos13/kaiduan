@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
         uiChat = transform.Find("Cover/div_Chat").gameObject.GetComponent<UI_Chat>();
         uiItem = transform.Find("Cover/div_Item").gameObject.GetComponent<UI_Item>();
         uiDie = transform.Find("Cover/div_Die").gameObject.GetComponent<UI_Die>();
+        sysCtrl.AllignGSComponent(this);
     }
     void Update()
     {

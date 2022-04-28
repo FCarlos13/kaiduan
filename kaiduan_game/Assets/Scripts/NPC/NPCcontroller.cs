@@ -11,11 +11,7 @@ public class NPCcontroller : MonoBehaviour
     #endregion
 
     #region º¯Êý
-    public void NPC1Controller()
-    {
-        if (npc1.moodLevel <= 0) npc1.badMood();
-        else if (npc1.moodLevel >= 20) npc1.goodMood();
-    }
+    
     public void NPC2Controller()
     {
         if (npc2.moodLevel <= -20) { npc2.badMood(); }
@@ -28,12 +24,5 @@ public class NPCcontroller : MonoBehaviour
     }
     #endregion
 
-    #region »Øµ÷
-    void Update()
-    {
-        NPC1Controller();
-        NPC2Controller();
-        NPC3Controller();
-    }
-    #endregion
+    
 }

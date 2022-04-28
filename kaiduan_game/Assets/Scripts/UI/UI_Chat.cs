@@ -21,6 +21,12 @@ public class UI_Chat : UIBase
         bt2.gameObject.GetComponent<UIBase>().HideWithCanvasGroup();
         bt3.gameObject.GetComponent<UIBase>().HideWithCanvasGroup();
     }
+    public void ResumeAllButton()
+    {
+        bt1.gameObject.GetComponent<UIBase>().ShowWithCanvasGroup();
+        bt2.gameObject.GetComponent<UIBase>().ShowWithCanvasGroup();
+        bt3.gameObject.GetComponent<UIBase>().ShowWithCanvasGroup();
+    }
     public void ChangeChatText(string s)
     {
         text.text = s;
@@ -32,11 +38,6 @@ public class UI_Chat : UIBase
         bt1 = transform.Find("Choice1").gameObject.GetComponent<Button>();
         bt2 = transform.Find("Choice2").gameObject.GetComponent<Button>();
         bt3 = transform.Find("Choice3").gameObject.GetComponent<Button>();
-        //refuseBt = transform.Find("RefuseUI/OK").gameObject.GetComponent<Button>();
-        //refuseUI = transform.Find("RefuseUI").gameObject;
-
-        //refuseBt.onClick.AddListener(OnButtonOKClick);
-
         HideWithCanvasGroup();
     }
 }
